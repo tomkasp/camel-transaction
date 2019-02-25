@@ -15,12 +15,12 @@ public class TransactionController {
     AccountService accountService;
 
     @GetMapping(value = "/create")
-    public String getAccount(@RequestParam("number") String number) {
-        return accountService.createAccount(number).toString();
+    public void getAccount(@RequestParam("number") String number) {
+         accountService.createAccount(number);
     }
 
     @GetMapping(value = "/update")
-    public String updateAccount(@RequestParam("id") Long id, @RequestParam("newnumber") String newNumber) {
-        return accountService.updateAccount(id, newNumber).toString();
+    public void updateAccount(@RequestParam("id") Long id, @RequestParam("newnumber") String newNumber) {
+         accountService.updateAccount(id, newNumber);
     }
 }
